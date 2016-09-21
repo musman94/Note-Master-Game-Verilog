@@ -1,0 +1,5 @@
+verilog work "music_ROM.v"
+verilog work "divide_by12.v"
+verilog work "music.v"
+verilog work "clockDivider.v"
+verilog work "mainModule.v"

@@ -1,0 +1,10 @@
+xst -intstyle ise -ifn "E:/Courses/Semester 3/CS223/Project/Final3/mainModule.xst" -ofn "E:/Courses/Semester 3/CS223/Project/Final3/mainModule.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-5 "mainModule.ngc" mainModule.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o mainModule_map.ncd mainModule.ngd mainModule.pcf 
+par -w -intstyle ise -ol high -t 1 mainModule_map.ncd mainModule.ncd mainModule.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml mainModule.twx mainModule.ncd -o mainModule.twr mainModule.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-5 "mainModule.ngc" mainModule.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o mainModule_map.ncd mainModule.ngd mainModule.pcf 
+par -w -intstyle ise -ol high -t 1 mainModule_map.ncd mainModule.ncd mainModule.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml mainModule.twx mainModule.ncd -o mainModule.twr mainModule.pcf 
+bitgen -intstyle ise -f mainModule.ut mainModule.ncd 
